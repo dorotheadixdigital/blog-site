@@ -3,16 +3,20 @@
 {% block content %}
 <div class="section">
 <div id="new-q-form">
-    <h1>Create your new question here</h1>
+    <h1>Tell us about your cyberscape idea here</h1>
         <form action="{% url 'new-question' %}" method="POST">
             {% csrf_token %}
             <br>
-            <h5>Question Title</h5>
+            <h5>Cyberscape Idea Headline</h5>
             <input id="new-q-title" type="text" name="{{ form.title.html_name }}"></input>
             <br>
             <br>
-            <h5>Question Content</h5>
+            <h5>Elaborate</h5>
             <textarea id="new-q-content" cols="50" rows="5" name="{{ form.content.html_name }}"></textarea>
+            <br>
+            <br>
+            <h5>Reference URL</h5>
+            <textarea id="new-q-refURL" cols="50" rows="5" name="{{ form.refernceURL.html_name }}"></textarea>
             <br>
             <br>
             <button id="new-q-button">Submit</button>
