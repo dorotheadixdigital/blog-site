@@ -12,6 +12,7 @@ class Question (models.Model):
     correct_answer = models.OneToOneField(to="Answer", on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     times_favorited = models.PositiveIntegerField(default=0)
+    referenceurl = models.URLField(max_length=2000, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -29,6 +30,7 @@ class Answer (models.Model):
     author = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     times_favorited = models.PositiveIntegerField(default=0)
+    referenceurl = models.URLField(max_length=2000, null=True, blank=True)
 
     def __str__ (self):
         return f"{self.target_question.title}|{self.content[:25]}"
