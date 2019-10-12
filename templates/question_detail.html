@@ -71,6 +71,7 @@ Asked by: {{ question.author }}</p>
                     {% for answer in question.answer_set.all %} 
                         {% if question.correct_answer == answer %}
                             <p><strong>{{answer.content}}</strong> - {{answer.created_at}} by {{answer.author}}
+                            
                             {% if question.author == request.user %}
                                 <button class="makeCorrectLink" id="answer-{{ answer.pk }}" data-answerpk="{{ answer.pk }}" data-questionpk="{{ question.pk }}">Remove as correct answer</button>
                             {% endif %}
