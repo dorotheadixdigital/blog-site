@@ -9,33 +9,104 @@
         <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="shortcut icon" href="../static/images/sunflower.png" type="image/x-icon" />
         <!-- Add additional CSS in static file -->
         {% load static %}
+        <link rel="shortcut icon" href="{% static 'images/sunflower.png' %}" type="image/x-icon" />
         <link rel="stylesheet" href="{% static 'styles.css' %}">
         {% block head %}{% endblock %}
-      </head>
-      <body>
+    </head>
+    <body>
         <div class="mdc-typography background">
-          <header class="base-header">
-            <div id="v2-header-title">
-              <h1 id="v2-site-head">Dorothea Dix Park</h1>
-              <p id="v2-header-label">Q&A Blog Site</p>
-            </div>
-            <div id="v2-login-area">
+            <!-- <div id="v2-login-area">
                 {% if request.user.is_authenticated %}
                   <p id="login-name">Hi {{request.user}}</p> <a href="{% url 'home' %}">Home</a> · <a class="washed-blue" href="{% url 'profile' %}">Profile</a> · <a class="washed-blue" href="{% url 'account_logout' %}">Logout</a>
                 {% else %}
                   <a href="{% url 'home' %}">Home</a> · <a class="washed-blue" href="{% url 'account_login' %}">Login</a> · <a class="washed-blue" href="{% url 'account_signup' %}">Register</a>
                 {% endif %}
+            </div> -->
+            <div class="mdc-tab-bar mdc-top-app-bar mdc-top-app-bar--fixed" role="tablist">
+                <div class="mdc-tab-scroller">
+                    <div class="mdc-tab-scroller__scroll-area">
+                        <div class="mdc-tab-scroller__scroll-content">
+        
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{}'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label"><img tabindex="0" style="width:2rem" src="{% static 'images/sunflower.png' %}" aria-label="home"></span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>
+        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='conversation.html'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Brainstorms</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>   
+        
+        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='population.html'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Population Sensing</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>   
+                    
+        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='nature.html'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Nature Interactive</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>  
+        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='organizing.html'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Co-Organizing Space</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>  
+        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='resources.html'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Resources</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-top-app-bar--fixed-adjust"></div>
+          <header class="base-header">
+            <div id="v2-header-title">
+              <h1 id="v2-site-head">Dorothea Dix Park</h1>
+              <p id="v2-header-label">Q&A Blog Site</p>
             </div>
           </header>
           <div class="spacemaker">
-              <div class="spacemakeritem"><img tabindex="0" style="width:100%"src="../core/static/images/sunflower.png" aria-label="sunflower"></div>
+              <div class="spacemakeritem"><img tabindex="0" style="width:100%"src="{% static 'images/sunflower.png' %}" aria-label="sunflower"></div>
         </div>
           <div class="body-content">
           {% block content %}{% endblock %}</div>
           </div>
         </div>
-      </body>
-      </html>
+    </body>
+</html>
