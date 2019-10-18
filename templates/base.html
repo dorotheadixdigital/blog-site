@@ -17,19 +17,15 @@
     </head>
     <body>
         <div class="mdc-typography background">
-            <!-- <div id="v2-login-area">
-                {% if request.user.is_authenticated %}
-                  <p id="login-name">Hi {{request.user}}</p> <a href="{% url 'home' %}">Home</a> · <a class="washed-blue" href="{% url 'profile' %}">Profile</a> · <a class="washed-blue" href="{% url 'account_logout' %}">Logout</a>
-                {% else %}
-                  <a href="{% url 'home' %}">Home</a> · <a class="washed-blue" href="{% url 'account_login' %}">Login</a> · <a class="washed-blue" href="{% url 'account_signup' %}">Register</a>
-                {% endif %}
-            </div> -->
+
+            <!-- Material Design fixed navbar taken from plainsite -->
             <div class="mdc-tab-bar mdc-top-app-bar mdc-top-app-bar--fixed" role="tablist">
                 <div class="mdc-tab-scroller">
                     <div class="mdc-tab-scroller__scroll-area">
                         <div class="mdc-tab-scroller__scroll-content">
-        
-                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{}'">
+                            
+                        <!-- Home Button -->
+                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{% url 'home' %}'">
                         <span class="mdc-tab__content">
                             <span class="mdc-tab__text-label"><img tabindex="0" style="width:2rem" src="{% static 'images/sunflower.png' %}" aria-label="home"></span>
                         </span>
@@ -38,72 +34,68 @@
                         </span>
                         <span class="mdc-tab__ripple"></span>
                         </button>
-        
-                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='conversation.html'">
+
+                        {% if request.user.is_authenticated %}
+
+                        <!-- If user is logged in displays profile and logout options in the navbar -->
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{% url 'profile' %}'">
                         <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Brainstorms</span>
-                        </span>
-                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                        </button>   
-        
-        
-                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='population.html'">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Population Sensing</span>
-                        </span>
-                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                        </button>   
-                    
-        
-                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='nature.html'">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Nature Interactive</span>
-                        </span>
-                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                        </button>  
-        
-                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='organizing.html'">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Co-Organizing Space</span>
-                        </span>
-                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
-                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                        </span>
-                        <span class="mdc-tab__ripple"></span>
-                        </button>  
-        
-                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='resources.html'">
-                        <span class="mdc-tab__content">
-                            <span class="mdc-tab__text-label">Resources</span>
+                            <span class="mdc-tab__text-label">Profile</span>
                         </span>
                         <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
                             <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
                         </span>
                         <span class="mdc-tab__ripple"></span>
                         </button>
+
+                        
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{% url 'account_logout' %}'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Logout</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>
+                        
+                        {% else %}
+
+                        <!-- If user is logged out displays login and register options in the navbar -->
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{% url 'account_login' %}'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Login</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>
+
+                        <button  class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0" onClick="location.href='{% url 'account_signup' %}'">
+                        <span class="mdc-tab__content">
+                            <span class="mdc-tab__text-label">Register</span>
+                        </span>
+                        <span id="programsindicator" class="mdc-tab-indicator mdc-tab-indicator--active">
+                            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                        </span>
+                        <span class="mdc-tab__ripple"></span>
+                        </button>
+
+                        {% endif %}
+
                        </div>
                     </div>
                 </div>
             </div>
             <div class="mdc-top-app-bar--fixed-adjust"></div>
-          <header class="base-header">
-            <div id="v2-header-title">
-              <h1 id="v2-site-head">Dorothea Dix Park</h1>
-              <p id="v2-header-label">Q&A Blog Site</p>
+          <header>
+            <div>
+              <h2 tabindex="0" class="mdc-typography--headline1 b">Dorothea Dix Park</h2>
+              <h4 tabindex="0" class="mdc-typography--headline4 b">Q&A Blog Site</h4>
             </div>
           </header>
-          <div class="spacemaker">
-              <div class="spacemakeritem"><img tabindex="0" style="width:100%"src="{% static 'images/sunflower.png' %}" aria-label="sunflower"></div>
-        </div>
+
           <div class="body-content">
           {% block content %}{% endblock %}</div>
           </div>
