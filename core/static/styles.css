@@ -1,410 +1,195 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Bungee+Outline|Geostar|Pacifico|Bangers&display=swap');
-.base-header {
-    
-    vertical-align: center;
-    background-color: orange;
-    padding: 6px;
-    font-family: 'Bangers';
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left:20px;
-    padding-right:20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    /* align-items: center; */
-}
-
-#new-q-form {
-    align-content: center;
-    font-family: 'Bangers';
-    color:black;
-
-
-    /* color:white; */
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  */
-    /* text-shadow: 5px 5px black; */
-}
-
-#new-q-title{
-
-    width:338px;
-    border : 2px solid black;
-}
-
-#new-q-content{
-
-    border : 2px solid black;
-}
-
-#new-q-button{
-
-    border : 2px solid black;
-    padding-right:9px;
-    padding-top:2px;
-   
-    color: black;
-}
-
-#delete-q-button {
-    border : 2px solid black;
-    padding-right:9px;
-    padding-top:2px;
-    margin-left: 30px;
-    color: black;
-    font-family: 'Bangers';
-}
-
-.answer-q-button {
-    border : 2px solid black;
-    padding-right:9px;
-    padding-top:2px;
-    color: black;
-    font-family: 'Bangers';
-}
-
-#perm-delete-link {
-    color: red;
-    margin-left: 30px;
-}
-
-.none-class {
-    font-family: 'Bangers';
-    font-size: 40px;
-    padding-left: 40px;
-}
-
 body {
-    background-color: rgba(255,255,255, 0.7);
-    background-blend-mode: lighten;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.title-text {
-    color: red;
-}
-
-/* #qbox-header, .login-area {
-    font-family: 'Bangers';
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
-
-} */
-#v2-site-head {
-    color: white;
-    font-size: 4rem;
-    text-shadow: 5px 5px black;
-    margin-bottom: 0px;
-}
-
-#v2-header-label {
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
-}
-
-#v2-login-area {
-    text-align: right;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    flex-grow: 2;
-}
-
-#v2-login-area a{
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background: #EEEEEE;
 }
 
 
-/* #qbox-header h1 {
-    color: white;
-    font-size: 4rem;
-    text-shadow: 5px 5px black;
-    margin-bottom: 0px;
-} */
-/* .question-display {
-    display: flex;
-    border: 5px solid #FFA500;
-    padding: 20px;
-    width: 70%;
-    height: auto;
-} */
+.mdc-typography {
+    --mdc-theme-primary: #757575;
+    margin: 0rem 0rem 0rem 0rem ;
+
+}
 
 
-
-.question-header {
-    border-bottom: 5px solid #FFA500;
-    width: 80%;
+.mdc-tab{
+    background-color: #757575 !important; 
     
 }
 
-#q-title-area{
-    display:flex;
-    font-family: 'Bangers';
-    color: white;
-    padding: 5px;
-    font-size: 3rem;
-    text-shadow: 5px 5px black;
-    letter-spacing: 2px;
+.mdc-tab-bar2{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+ 
+    
 }
 
-.fav-star {
-    color: yellow;
-    border-width: 0px;
-    font-size: 1.5rem;
-    background-color: rgba(255,255,255,0);
-    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red; 
-}
+.mdc-tab2{
+    background-color:#9E9E9E !important; 
 
-.fav-star:focus,.fav-star:active {
-    outline: none !important;
-    box-shadow: none !important;
 }
 
 
-#login-name {
-    margin-bottom: 0px;
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+.demo-card {
+    margin: 20pt; 
+    z-index: 10;
+    box-shadow: #ffffff;
+    
+
 }
 
-/* #login-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-} */
-
-.questionbox {
-    display:flex;
-    margin: 25px;
-    width: 70%;
-    height: auto;
-    background: rgba(247, 247, 247, .8);
-    border-width: 9px 6px 9px 5px;
-    border: solid white;
-    border-color: white; 
-    box-shadow: 10px 10px rgb(44, 44, 44);
-}
-
-.answerform {
-    margin-left: 50px;
-}
-
-.answer-display {
-    display:flex;
+.logostyle {
+    margin: 1rem 1rem 1rem 1rem;
     align-items: center;
-    margin: 25px;
-    padding-top: 10px;
-    padding-left: 20px;
-    width: 70%;
-    height: auto;
-    background: rgba(247, 247, 247, .8);
-    border-width: 9px 6px 9px 5px;
-    border: solid white;
-    border-color: white; 
-    box-shadow: 10px 10px rgb(44, 44, 44);
-}
-
-.answer-display p {
-    padding-left: 0px;
+    justify-content: center;
+    display: in-line;
 }
 
 
-.answer-display a {
-    font-family: 'Bangers';
-    font-size: 1.5rem;
+
+.mdc-card {
+    background-color: #424242;
+    z-index: 0;
+}
+
+.mdc-typography--headline1 {
+    margin: 1rem 1rem 1rem 1rem ;
+    text-align: center;
 
 }
 
-.qdisplay{
+.mdc-typography--headline2 {
+    margin: 1rem 1rem 1rem 1rem ;
+    text-align: center;
+}
+
+.mdc-typography--headline3 {
+    margin: 1rem 1rem 1rem 1rem ;
+    text-align: center;
+}
+
+.mdc-typography--headline4 {
+    margin: 1rem 1rem 1rem 1rem ;
+    text-align: center;
+}
+.mdc-typography--headline5 {
+    margin: 1rem 1rem 1rem 1rem ;
+}
+
+.mdc-typography--headline6 {
+    margin: 1rem 1rem 1rem 1rem ;
+    
+}
+
+.mdc-tab__text-label{
+
+    color: #EEEEEE !important;
+    
+}
+
+.mdc-typography--body1 {
+    margin: 1rem 1rem 1rem 1rem ;
+    
+}
+
+.mdc-typography--body2 {
+    margin: 1rem 1rem 1rem 1rem;
+    
+}
+
+.mdc-typography--overline {
+    margin: 1rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.center {
+    text-align: center;
+}
+
+.spacemaker {
+    width: 100%;
+    margin: 1rem 0rem 1rem 0rem ;
     display: flex;
-    padding: 30px 0 ;
-    padding-bottom: 0px;
+    align-items: center;
+    justify-content: center;
+    }
+
+.spacemakeritem {
+    width: 10%
 }
 
-.a-fav-button{
-    margin-left: 20px;
-}
+.spacemakeritem2 {
+    width: 20em;
 
-.makeCorrectLink{
-    margin-left: 20px;
-    border : 2px solid black;
-    padding-right:9px;
-    padding-top:2px;
-    color: black;
-    font-family: 'Bangers';
-}
-
-.actual-answer{
-    padding: 10px 0 auto auto;
-    margin: 20px;
-    width: auto;
-    height: auto; 
-    font-size: 20px;
-}
-
-.correct-answer{
-    display:flex;
-    margin: 25px;
-    padding-left: 20px;
-    width: 70%;
-    height: auto;
-    background: rgba(236, 205, 66, 0.8);
-    border-width: 9px 6px 9px 5px;
-    border: solid rgb(255, 209, 3);
-    border-color: rgb(255, 209, 3);
-    box-shadow: 10px 10px rgb(44, 44, 44);
 }
 
 
-.section{
-    display: block;
-    margin-left: 20px;
-    padding: 30px 0px;
+.aboutimage{
+    width: 100%;
+    margin: 1rem 0rem 0rem 0rem;
+    }
+
+.my-mdc-list-item__graphic{
+    width: 4rem;
+    margin: 1rem;
+    vertical-align: middle;
 }
 
 
-.box{
-    display: flex;
-    margin:25px;
-    padding-top: 10px;
-    padding-left: 20px;
-    width: 100px;
-    height: 250px;
-    background:#fff;
-    border: solid black;
-    border-color: black;
-    
-}
-
-.box2{
-    display:block;
-    margin: auto;
-    width:70%;
-    height: auto;
-    background-image: linear-gradient(to bottom, rgba(36, 2, 36, 0.77), rgba(117, 19, 93, 0.73)),
-    url("http://www.sclance.com/backgrounds/comic-book-polka-dot-background/comic-book-polka-dot-background_612694.jpg");
-    background-size: cover;
-    border-width: 3px 3px 5px 5px;
-    border-radius:4% 95% 6% 95%/95% 4% 92% 5%;
-    transform: rotate(-2deg);
+.mdc-list-item__primary-text{
+    color: #EEEEEE !important;
 
 }
 
-.box2 b{  
-   color: white;   
-}
-
-
-.index-text{
-
-    font-family: 'Bangers';
-    color: white;
-    padding: 5px;
-    font-size: 3rem;
-    text-shadow: 5px 5px black;
-    letter-spacing: 2px;
-    
-}
-
-
-.response-title {
-    font-family: 'Bangers';
-}
-
-
-#showFormButton {
-    border : 2px solid black;
-    padding-right:9px;
-    padding-top:2px;
-    color: black;
-    font-family: 'Bangers';
-}
-
-
-.qbox{
-    display: flex;
-    margin:25px;
-    padding-top: 10px;
-    padding-left: 20px;
-    width: 100px;
-    height: 250px;
-    background:#fff;
-    border: solid black;
-    border-color: black;
+.mdc-list-item__secondary-text{
+    color: #EEEEEE !important;
 
 }
 
-.qbox2{
-  
-    width:70%;
-    height: auto;
-    background-image: linear-gradient(to bottom, rgba(36, 2, 36, 0.77), rgba(117, 19, 93, 0.73)),
-    url("http://www.sclance.com/backgrounds/comic-book-polka-dot-background/comic-book-polka-dot-background_612694.jpg");
-    background-size: cover;
-    border-width: 5px;
-    box-shadow: 10px 10px rgb(44, 44, 44);
+.mdc-list-item{
+    margin: 1rem 1rem 1rem 1rem ;
+    text-decoration: none !important;
 }
 
-.qdet-headers {
-    font-family: 'Bangers';
-    font-size: 40px;
+.c{
+    text-align: center;
+}
+
+.w{
+    color: #EEEEEE !important;;
+}
+
+.b{
+    color: #212121 !important;;
+}
+
+.link {
+    color: #EEEEEE;
+    text-decoration: none !important;
+}
+
+.link2 {
+    color: #212121;
+    text-decoration: none !important;
+    font-weight: bold;
 }
 
 
-svg.kapow-button-1{
-    width:265px;
-    height:150px;
-    display: block;
-    margin: auto;
-}
 
-svg.kapow-button .kapow-button-shape{
-    fill:#ff0; 
-    stroke: #000; 
-    stroke-width:2px; 
-    stroke-linejoin:miter; 
-    stroke-miterlimit: 12;  
-    
-    transition: transform .4s, fill .2s;
-}
-svg.kapow-button-1 .kapow-button-shape{
-    transform-origin: 125px 70px;
-    transform:scale(.9, .9);
-}
 
-svg.kapow-button .kapow-button-text{
-    filter:url(#kapow-text);
-    fill: #f00;
-    text-anchor: middle;
-    alignment-baseline: middle;
-    
-    font-family: Bangers;
-    font-size: 2.1em;
-    
-    letter-spacing:.1em;
-    word-spacing:.1em;
-    
-    transition: all .5s;
-}
-svg.kapow-button-1 .kapow-button-text{
-    transform: translate(125px, 75px) rotate(-12deg);
-}
 
-svg .kapow-button-group:hover{
-    cursor:pointer;
-}
 
-svg .kapow-button-group:hover .kapow-button-shape{
-    fill:#ddff33; 
-}
-svg.kapow-button-1 .kapow-button-group:hover .kapow-button-shape{
-    fill:#ddff33; 
-    transform: scale(1);
-}
 
-svg.kapow-button .kapow-button-group:hover .kapow-button-text{
-    letter-spacing:.15em; 
 
-}
+
